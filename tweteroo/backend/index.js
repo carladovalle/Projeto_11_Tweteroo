@@ -21,5 +21,9 @@ app.post('/tweets', (req, res) => {
     res.send("ok")
 });
 
+app.get('/tweets', (req,res) => {
+    let tweets2 = tweets.slice(-10)
+    res.send(tweets2)
+})
 
 app.listen(5000);
