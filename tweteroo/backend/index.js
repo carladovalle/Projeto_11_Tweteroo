@@ -13,17 +13,5 @@ app.post('/sign-up', (req, res) => {
     res.send("ok")
 });
 
-app.post('/tweets', (req, res) => {
-    let tweet = req.body.tweet;
-    let username = req.body.username;
-    let avatar = users.find(user => user.username === username).avatar;
-    tweets.push({tweet, username, avatar})
-    res.send("ok")
-});
-
-app.get('/tweets', (req,res) => {
-    let tweets2 = tweets.slice(-10)
-    res.send(tweets2)
-})
 
 app.listen(5000);
